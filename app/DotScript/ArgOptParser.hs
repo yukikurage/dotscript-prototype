@@ -1,7 +1,10 @@
 module DotScript.ArgOptParser where
 
-import           DotScript.Data.ArgOptions
-import           Options.Applicative
+import           DotScript.Data.ArgOptions (ArgOptions (ArgOptions))
+import           Options.Applicative       (Parser, ParserInfo, fullDesc, help,
+                                            helper, info, long, metavar,
+                                            progDesc, short, showDefault,
+                                            strOption, value, (<**>))
 
 argOptParser :: ParserInfo ArgOptions
 argOptParser = info (parser <**> helper)
